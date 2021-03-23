@@ -59,9 +59,9 @@ def process_trace_files(l, tracefile='train_traces_shuffled.npy', keyfile = 'tra
   X = []; Y = [];
   for f in l:
     tmp = h5py.File(f);
-    Xtmp = np.array(f['0']['samples']['value']);
+    Xtmp = np.array(tmp['0']['samples']['value']);
     Xtmp = decimate_trace(Xtmp, 10);
-    ktmp = np.array(f['0']['key']['value']).astype(np.uint8);
+    ktmp = np.array(tmp['0']['key']['value']).astype(np.uint8);
     k = expand_all_keys(ktmp);
     X = X + [Xtmp];
     Y = Y + [k];
