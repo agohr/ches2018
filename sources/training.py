@@ -1,5 +1,5 @@
 from pickle import load
-from aes_ks_analysis import hw
+from aes_ks_sat import hw
 from keras.models import load_model
 from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau#
 from utils import shuffle_together, hw
